@@ -70,11 +70,6 @@ export default class SelectelStorage {
       this.X_AUTH_TOKEN = response.headers.get('x-auth-token')
       this.X_STORAGE_URL = response.headers.get('x-storage-url')
       this.X_EXPIRE_AUTH_TOKEN = new Date((new Date).getTime() + Number(response.headers.get('x-expire-auth-token')) * 1000)
-      console.dir({
-        token: this.X_AUTH_TOKEN,
-        storageURL: this.X_STORAGE_URL,
-        expire: this.X_EXPIRE_AUTH_TOKEN
-      })
       return true
     } catch (error) {
       throw new Error(error)
